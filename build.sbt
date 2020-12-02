@@ -29,6 +29,3 @@ libraryDependencies ++= Seq(
   "io.circe"           %% "circe-generic"        % CirceVersion,
   "org.specs2"         %% "specs2-core"          % Specs2Version % Test
 )
-
-addCompilerPlugin("org.typelevel" %% "kind-projector"     % "0.10.3")
-addCompilerPlugin("com.olegpy"    %% "better-monadic-for" % "0.3.1")
