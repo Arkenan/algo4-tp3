@@ -14,7 +14,7 @@ Se usara una nuevo container que tiene la nueva tabla, este es: ```fpfiuba/tpdb:
 
 Para correrlo se realiza de la siguiente manera
 ```
-$ docker run -p 5432:5432 -d --name db fpfiuba/tpdb:3
+$ docker run -p 5432:5432 -d --name db3 fpfiuba/tpdb:3
 ```
 
 Nueva tabla para persistir los scores (ya creada en el container)
