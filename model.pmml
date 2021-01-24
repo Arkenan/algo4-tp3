@@ -1,0 +1,1221 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PMML xmlns="http://www.dmg.org/PMML-4_4" xmlns:data="http://jpmml.org/jpmml-model/InlineTable" version="4.3">
+    <Header>
+        <Application name="JPMML-SparkML" version="1.6.1"/>
+        <Timestamp>2020-12-04T22:22:19Z</Timestamp>
+    </Header>
+    <DataDictionary>
+        <DataField name="low" optype="continuous" dataType="double"/>
+        <DataField name="diff" optype="continuous" dataType="double"/>
+        <DataField name="OVol" optype="continuous" dataType="integer"/>
+        <DataField name="ODiff" optype="continuous" dataType="integer"/>
+        <DataField name="OpVol" optype="continuous" dataType="integer"/>
+        <DataField name="dollarBN" optype="continuous" dataType="double"/>
+        <DataField name="dollarItau" optype="continuous" dataType="double"/>
+        <DataField name="wDiff" optype="continuous" dataType="double"/>
+        <DataField name="close" optype="continuous" dataType="double">
+            <Value value="320.0"/>
+            <Value value="168.0"/>
+            <Value value="169.0"/>
+            <Value value="165.0"/>
+            <Value value="228.0"/>
+            <Value value="170.0"/>
+            <Value value="173.0"/>
+            <Value value="235.0"/>
+            <Value value="255.0"/>
+            <Value value="321.0"/>
+            <Value value="233.0"/>
+            <Value value="298.0"/>
+            <Value value="318.0"/>
+            <Value value="340.0"/>
+            <Value value="162.0"/>
+            <Value value="167.0"/>
+            <Value value="227.0"/>
+            <Value value="230.0"/>
+            <Value value="234.0"/>
+            <Value value="265.0"/>
+            <Value value="270.0"/>
+            <Value value="176.0"/>
+            <Value value="177.0"/>
+            <Value value="264.0"/>
+            <Value value="305.0"/>
+            <Value value="314.0"/>
+            <Value value="195.0"/>
+            <Value value="206.0"/>
+            <Value value="280.0"/>
+            <Value value="291.0"/>
+            <Value value="322.0"/>
+            <Value value="207.0"/>
+            <Value value="218.0"/>
+            <Value value="225.0"/>
+            <Value value="232.0"/>
+            <Value value="254.0"/>
+            <Value value="324.0"/>
+            <Value value="325.0"/>
+            <Value value="326.0"/>
+            <Value value="166.0"/>
+            <Value value="171.0"/>
+            <Value value="175.0"/>
+            <Value value="180.0"/>
+            <Value value="203.0"/>
+            <Value value="226.0"/>
+            <Value value="240.0"/>
+            <Value value="241.0"/>
+            <Value value="279.0"/>
+            <Value value="283.0"/>
+            <Value value="288.0"/>
+            <Value value="327.0"/>
+            <Value value="336.0"/>
+            <Value value="350.0"/>
+            <Value value="190.0"/>
+            <Value value="193.5"/>
+            <Value value="220.0"/>
+            <Value value="224.0"/>
+            <Value value="257.0"/>
+            <Value value="261.0"/>
+            <Value value="262.0"/>
+            <Value value="269.0"/>
+            <Value value="309.0"/>
+            <Value value="317.0"/>
+            <Value value="331.0"/>
+            <Value value="343.0"/>
+            <Value value="163.0"/>
+            <Value value="172.0"/>
+            <Value value="174.0"/>
+            <Value value="178.0"/>
+            <Value value="182.0"/>
+            <Value value="193.0"/>
+            <Value value="199.0"/>
+            <Value value="231.0"/>
+            <Value value="236.0"/>
+            <Value value="252.0"/>
+            <Value value="253.0"/>
+            <Value value="260.0"/>
+            <Value value="267.0"/>
+            <Value value="271.0"/>
+            <Value value="272.0"/>
+            <Value value="276.0"/>
+            <Value value="282.0"/>
+            <Value value="285.0"/>
+            <Value value="287.0"/>
+            <Value value="307.0"/>
+            <Value value="308.0"/>
+            <Value value="310.0"/>
+            <Value value="312.0"/>
+            <Value value="315.0"/>
+            <Value value="337.0"/>
+            <Value value="341.0"/>
+            <Value value="158.0"/>
+            <Value value="179.0"/>
+            <Value value="186.0"/>
+            <Value value="188.0"/>
+            <Value value="191.0"/>
+            <Value value="192.0"/>
+            <Value value="196.0"/>
+            <Value value="200.0"/>
+            <Value value="213.0"/>
+            <Value value="215.0"/>
+            <Value value="219.0"/>
+            <Value value="222.0"/>
+            <Value value="237.0"/>
+            <Value value="238.0"/>
+            <Value value="258.0"/>
+            <Value value="274.0"/>
+            <Value value="277.0"/>
+            <Value value="290.0"/>
+            <Value value="293.0"/>
+            <Value value="299.0"/>
+            <Value value="300.0"/>
+            <Value value="323.0"/>
+            <Value value="330.0"/>
+            <Value value="338.0"/>
+            <Value value="339.0"/>
+            <Value value="345.0"/>
+            <Value value="347.0"/>
+            <Value value="361.0"/>
+            <Value value="156.0"/>
+            <Value value="159.0"/>
+            <Value value="185.0"/>
+            <Value value="192.5"/>
+            <Value value="205.0"/>
+            <Value value="212.0"/>
+            <Value value="227.5"/>
+            <Value value="230.5"/>
+            <Value value="239.0"/>
+            <Value value="263.0"/>
+            <Value value="266.0"/>
+            <Value value="270.5"/>
+            <Value value="273.0"/>
+            <Value value="275.0"/>
+            <Value value="278.0"/>
+            <Value value="286.0"/>
+            <Value value="304.0"/>
+            <Value value="313.0"/>
+            <Value value="316.0"/>
+            <Value value="352.0"/>
+            <Value value="355.0"/>
+            <Value value="154.0"/>
+            <Value value="157.0"/>
+            <Value value="164.0"/>
+            <Value value="166.5"/>
+            <Value value="189.0"/>
+            <Value value="197.0"/>
+            <Value value="198.0"/>
+            <Value value="202.0"/>
+            <Value value="208.0"/>
+            <Value value="216.0"/>
+            <Value value="221.0"/>
+            <Value value="223.0"/>
+            <Value value="243.0"/>
+            <Value value="249.0"/>
+            <Value value="252.5"/>
+            <Value value="259.0"/>
+            <Value value="264.5"/>
+            <Value value="268.0"/>
+            <Value value="273.5"/>
+            <Value value="281.0"/>
+            <Value value="289.0"/>
+            <Value value="295.0"/>
+            <Value value="301.0"/>
+            <Value value="302.0"/>
+            <Value value="303.0"/>
+            <Value value="311.0"/>
+            <Value value="328.0"/>
+            <Value value="332.0"/>
+            <Value value="348.0"/>
+            <Value value="351.0"/>
+            <Value value="354.0"/>
+            <Value value="360.0"/>
+            <Value value="363.0"/>
+            <Value value="369.0"/>
+            <Value value="378.0"/>
+            <Value value="407.0"/>
+            <Value value="148.0"/>
+            <Value value="153.0"/>
+            <Value value="160.0"/>
+            <Value value="161.0"/>
+            <Value value="164.5"/>
+            <Value value="167.5"/>
+            <Value value="168.5"/>
+            <Value value="169.5"/>
+            <Value value="170.5"/>
+            <Value value="171.5"/>
+            <Value value="172.5"/>
+            <Value value="174.5"/>
+            <Value value="177.5"/>
+            <Value value="184.0"/>
+            <Value value="187.0"/>
+            <Value value="194.0"/>
+            <Value value="201.0"/>
+            <Value value="204.0"/>
+            <Value value="211.0"/>
+            <Value value="214.0"/>
+            <Value value="217.0"/>
+            <Value value="229.0"/>
+            <Value value="231.5"/>
+            <Value value="232.5"/>
+            <Value value="245.0"/>
+            <Value value="247.0"/>
+            <Value value="265.5"/>
+            <Value value="274.5"/>
+            <Value value="284.0"/>
+            <Value value="292.0"/>
+            <Value value="293.5"/>
+            <Value value="296.0"/>
+            <Value value="296.5"/>
+            <Value value="297.0"/>
+            <Value value="306.0"/>
+            <Value value="329.0"/>
+            <Value value="334.0"/>
+            <Value value="335.0"/>
+            <Value value="342.0"/>
+            <Value value="346.0"/>
+            <Value value="357.0"/>
+            <Value value="365.0"/>
+            <Value value="408.0"/>
+            <Value value="155.0"/>
+            <Value value="157.5"/>
+            <Value value="158.5"/>
+            <Value value="210.0"/>
+            <Value value="228.5"/>
+            <Value value="229.5"/>
+            <Value value="238.5"/>
+            <Value value="242.0"/>
+            <Value value="250.0"/>
+            <Value value="251.0"/>
+            <Value value="253.5"/>
+            <Value value="258.5"/>
+            <Value value="268.5"/>
+            <Value value="271.5"/>
+            <Value value="278.5"/>
+            <Value value="288.5"/>
+            <Value value="289.5"/>
+            <Value value="292.5"/>
+            <Value value="307.5"/>
+            <Value value="316.5"/>
+            <Value value="319.0"/>
+            <Value value="333.0"/>
+            <Value value="344.0"/>
+            <Value value="347.5"/>
+            <Value value="349.0"/>
+            <Value value="349.5"/>
+            <Value value="353.0"/>
+            <Value value="356.0"/>
+            <Value value="364.0"/>
+            <Value value="366.0"/>
+            <Value value="395.0"/>
+            <Value value="415.0"/>
+            <Value value="422.0"/>
+            <Value value="149.0"/>
+            <Value value="151.0"/>
+            <Value value="163.5"/>
+            <Value value="173.5"/>
+            <Value value="179.5"/>
+            <Value value="183.0"/>
+            <Value value="185.5"/>
+            <Value value="190.5"/>
+            <Value value="194.5"/>
+            <Value value="199.5"/>
+            <Value value="214.5"/>
+            <Value value="217.5"/>
+            <Value value="225.5"/>
+            <Value value="226.5"/>
+            <Value value="236.5"/>
+            <Value value="244.0"/>
+            <Value value="246.0"/>
+            <Value value="248.0"/>
+            <Value value="256.0"/>
+            <Value value="257.5"/>
+            <Value value="267.2"/>
+            <Value value="269.5"/>
+            <Value value="277.5"/>
+            <Value value="283.5"/>
+            <Value value="284.5"/>
+            <Value value="286.5"/>
+            <Value value="290.5"/>
+            <Value value="291.5"/>
+            <Value value="294.0"/>
+            <Value value="294.5"/>
+            <Value value="299.5"/>
+            <Value value="313.5"/>
+            <Value value="321.5"/>
+            <Value value="325.5"/>
+            <Value value="329.5"/>
+            <Value value="331.5"/>
+            <Value value="338.5"/>
+            <Value value="340.5"/>
+            <Value value="355.5"/>
+            <Value value="360.5"/>
+            <Value value="362.0"/>
+            <Value value="367.0"/>
+            <Value value="368.0"/>
+            <Value value="380.0"/>
+            <Value value="382.0"/>
+            <Value value="383.0"/>
+            <Value value="390.0"/>
+            <Value value="394.5"/>
+            <Value value="396.0"/>
+            <Value value="397.0"/>
+            <Value value="401.0"/>
+            <Value value="402.0"/>
+            <Value value="403.0"/>
+            <Value value="411.0"/>
+            <Value value="414.0"/>
+            <Value value="425.0"/>
+            <Value value="431.0"/>
+            <Value value="146.0"/>
+            <Value value="147.0"/>
+            <Value value="150.0"/>
+            <Value value="151.5"/>
+            <Value value="154.5"/>
+            <Value value="155.5"/>
+            <Value value="159.5"/>
+            <Value value="160.5"/>
+            <Value value="161.5"/>
+            <Value value="162.5"/>
+            <Value value="171.1"/>
+            <Value value="173.7"/>
+            <Value value="175.5"/>
+            <Value value="175.9"/>
+            <Value value="176.5"/>
+            <Value value="181.0"/>
+            <Value value="186.5"/>
+            <Value value="187.5"/>
+            <Value value="195.5"/>
+            <Value value="196.5"/>
+            <Value value="197.5"/>
+            <Value value="198.5"/>
+            <Value value="199.3"/>
+            <Value value="200.3"/>
+            <Value value="200.5"/>
+            <Value value="202.2"/>
+            <Value value="202.5"/>
+            <Value value="202.7"/>
+            <Value value="207.5"/>
+            <Value value="209.5"/>
+            <Value value="212.5"/>
+            <Value value="215.5"/>
+            <Value value="220.5"/>
+            <Value value="221.5"/>
+            <Value value="223.5"/>
+            <Value value="223.8"/>
+            <Value value="224.5"/>
+            <Value value="224.8"/>
+            <Value value="226.3"/>
+            <Value value="226.8"/>
+            <Value value="230.2"/>
+            <Value value="231.8"/>
+            <Value value="232.2"/>
+            <Value value="233.5"/>
+            <Value value="234.6"/>
+            <Value value="235.5"/>
+            <Value value="237.2"/>
+            <Value value="237.5"/>
+            <Value value="240.5"/>
+            <Value value="241.5"/>
+            <Value value="241.8"/>
+            <Value value="243.7"/>
+            <Value value="248.3"/>
+            <Value value="250.5"/>
+            <Value value="251.5"/>
+            <Value value="255.5"/>
+            <Value value="256.5"/>
+            <Value value="261.5"/>
+            <Value value="263.3"/>
+            <Value value="263.5"/>
+            <Value value="263.8"/>
+            <Value value="266.5"/>
+            <Value value="269.2"/>
+            <Value value="270.8"/>
+            <Value value="271.9"/>
+            <Value value="273.6"/>
+            <Value value="274.8"/>
+            <Value value="275.5"/>
+            <Value value="276.5"/>
+            <Value value="276.8"/>
+            <Value value="277.6"/>
+            <Value value="278.3"/>
+            <Value value="280.5"/>
+            <Value value="281.5"/>
+            <Value value="281.8"/>
+            <Value value="282.5"/>
+            <Value value="285.3"/>
+            <Value value="285.5"/>
+            <Value value="285.6"/>
+            <Value value="287.5"/>
+            <Value value="289.9"/>
+            <Value value="291.7"/>
+            <Value value="292.2"/>
+            <Value value="294.7"/>
+            <Value value="295.5"/>
+            <Value value="295.9"/>
+            <Value value="297.9"/>
+            <Value value="298.8"/>
+            <Value value="300.5"/>
+            <Value value="302.5"/>
+            <Value value="303.9"/>
+            <Value value="304.5"/>
+            <Value value="304.7"/>
+            <Value value="308.5"/>
+            <Value value="308.8"/>
+            <Value value="309.3"/>
+            <Value value="310.5"/>
+            <Value value="311.5"/>
+            <Value value="312.4"/>
+            <Value value="312.5"/>
+            <Value value="313.1"/>
+            <Value value="314.5"/>
+            <Value value="315.5"/>
+            <Value value="319.5"/>
+            <Value value="320.5"/>
+            <Value value="320.9"/>
+            <Value value="321.4"/>
+            <Value value="322.5"/>
+            <Value value="322.6"/>
+            <Value value="323.5"/>
+            <Value value="324.5"/>
+            <Value value="324.8"/>
+            <Value value="325.2"/>
+            <Value value="325.4"/>
+            <Value value="326.6"/>
+            <Value value="327.5"/>
+            <Value value="327.8"/>
+            <Value value="328.2"/>
+            <Value value="328.5"/>
+            <Value value="328.8"/>
+            <Value value="329.2"/>
+            <Value value="330.5"/>
+            <Value value="335.3"/>
+            <Value value="336.5"/>
+            <Value value="337.5"/>
+            <Value value="337.6"/>
+            <Value value="338.6"/>
+            <Value value="338.7"/>
+            <Value value="339.1"/>
+            <Value value="341.5"/>
+            <Value value="342.5"/>
+            <Value value="343.8"/>
+            <Value value="344.2"/>
+            <Value value="344.5"/>
+            <Value value="345.9"/>
+            <Value value="346.5"/>
+            <Value value="350.6"/>
+            <Value value="351.5"/>
+            <Value value="352.5"/>
+            <Value value="356.5"/>
+            <Value value="358.0"/>
+            <Value value="359.0"/>
+            <Value value="362.5"/>
+            <Value value="364.8"/>
+            <Value value="370.0"/>
+            <Value value="371.0"/>
+            <Value value="375.5"/>
+            <Value value="378.5"/>
+            <Value value="381.5"/>
+            <Value value="382.5"/>
+            <Value value="384.5"/>
+            <Value value="385.0"/>
+            <Value value="387.0"/>
+            <Value value="388.0"/>
+            <Value value="389.0"/>
+            <Value value="390.5"/>
+            <Value value="391.0"/>
+            <Value value="393.0"/>
+            <Value value="393.5"/>
+            <Value value="397.1"/>
+            <Value value="399.0"/>
+            <Value value="400.0"/>
+            <Value value="400.5"/>
+            <Value value="401.5"/>
+            <Value value="404.5"/>
+            <Value value="405.0"/>
+            <Value value="406.0"/>
+            <Value value="406.8"/>
+            <Value value="407.5"/>
+            <Value value="408.5"/>
+            <Value value="408.8"/>
+            <Value value="409.0"/>
+            <Value value="409.5"/>
+            <Value value="409.8"/>
+            <Value value="412.0"/>
+            <Value value="413.0"/>
+            <Value value="414.5"/>
+            <Value value="416.0"/>
+            <Value value="417.0"/>
+            <Value value="417.6"/>
+            <Value value="418.0"/>
+            <Value value="419.0"/>
+            <Value value="420.6"/>
+            <Value value="424.0"/>
+            <Value value="426.0"/>
+            <Value value="427.0"/>
+            <Value value="429.0"/>
+            <Value value="429.5"/>
+            <Value value="435.0"/>
+            <Value value="437.0"/>
+            <Value value="438.0"/>
+            <Value value="438.5"/>
+            <Value value="438.6"/>
+            <Value value="439.0"/>
+            <Value value="439.5"/>
+            <Value value="442.0"/>
+            <Value value="-999" property="invalid"/>
+        </DataField>
+    </DataDictionary>
+    <TransformationDictionary/>
+    <MiningModel functionName="regression">
+        <MiningSchema>
+            <MiningField name="close" usageType="target" invalidValueTreatment="asIs" invalidValueReplacement="-999"/>
+            <MiningField name="low"/>
+            <MiningField name="diff"/>
+            <MiningField name="OVol"/>
+            <MiningField name="ODiff"/>
+            <MiningField name="OpVol"/>
+            <MiningField name="dollarBN"/>
+            <MiningField name="dollarItau"/>
+            <MiningField name="wDiff"/>
+        </MiningSchema>
+        <Output>
+            <OutputField name="prediction" optype="continuous" dataType="double"/>
+        </Output>
+        <Segmentation multipleModelMethod="average">
+            <Segment id="1">
+                <True/>
+                <TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+                    <MiningSchema>
+                        <MiningField name="dollarBN"/>
+                        <MiningField name="dollarItau"/>
+                        <MiningField name="wDiff"/>
+                    </MiningSchema>
+                    <Node score="185.04609929078015">
+                        <True/>
+                        <Node score="311.8722807017543">
+                            <SimplePredicate field="wDiff" operator="lessOrEqual" value="-261.25"/>
+                            <Node score="276.28035714285716">
+<SimplePredicate field="dollarBN" operator="lessOrEqual" value="3.9585"/>
+<Node score="326.3152777777778">
+    <SimplePredicate field="wDiff" operator="lessOrEqual" value="-299.75"/>
+</Node>
+                            </Node>
+                            <Node score="386.8133663366337">
+<SimplePredicate field="wDiff" operator="lessOrEqual" value="-349.25"/>
+                            </Node>
+                        </Node>
+                        <Node score="222.84115853658534">
+                            <SimplePredicate field="wDiff" operator="lessOrEqual" value="-202.1"/>
+                            <Node score="249.34550264550265">
+<SimplePredicate field="wDiff" operator="lessOrEqual" value="-235.25"/>
+                            </Node>
+                        </Node>
+                        <Node score="172.13768115942028">
+                            <SimplePredicate field="dollarItau" operator="lessOrEqual" value="3.0785"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="2">
+                <True/>
+                <TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+                    <MiningSchema>
+                        <MiningField name="ODiff"/>
+                        <MiningField name="dollarBN"/>
+                        <MiningField name="wDiff"/>
+                    </MiningSchema>
+                    <Node score="253.79536082474232">
+                        <True/>
+                        <Node score="238.01707317073172">
+                            <SimplePredicate field="ODiff" operator="lessOrEqual" value="-550.0"/>
+                            <Node score="328.0050632911392">
+<SimplePredicate field="dollarBN" operator="lessOrEqual" value="8.264"/>
+<Node score="267.46153846153845">
+    <SimplePredicate field="dollarBN" operator="lessOrEqual" value="3.9195"/>
+</Node>
+                            </Node>
+                            <Node score="273.78749999999997">
+<SimplePredicate field="dollarBN" operator="lessOrEqual" value="9.014"/>
+                            </Node>
+                        </Node>
+                        <Node score="177.43986710963452">
+                            <SimplePredicate field="dollarBN" operator="lessOrEqual" value="3.1395"/>
+                            <Node score="265.0572327044025">
+<SimplePredicate field="wDiff" operator="lessOrEqual" value="-221.25"/>
+                            </Node>
+                        </Node>
+                        <Node score="345.4818181818182">
+                            <SimplePredicate field="wDiff" operator="lessOrEqual" value="-299.75"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="3">
+                <True/>
+                <TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+                    <MiningSchema>
+                        <MiningField name="dollarBN"/>
+                        <MiningField name="dollarItau"/>
+                        <MiningField name="wDiff"/>
+                    </MiningSchema>
+                    <Node score="235.08023529411767">
+                        <True/>
+                        <Node score="313.1467465753425">
+                            <SimplePredicate field="wDiff" operator="lessOrEqual" value="-261.25"/>
+                            <Node score="276.24636363636364">
+<SimplePredicate field="dollarItau" operator="lessOrEqual" value="3.958"/>
+<Node score="328.03617021276597">
+    <SimplePredicate field="wDiff" operator="lessOrEqual" value="-299.75"/>
+</Node>
+                            </Node>
+                            <Node score="384.55930232558137">
+<SimplePredicate field="wDiff" operator="lessOrEqual" value="-349.25"/>
+                            </Node>
+                        </Node>
+                        <Node score="178.9568093385214">
+                            <SimplePredicate field="dollarBN" operator="lessOrEqual" value="3.1035000000000004"/>
+                            <Node score="202.23026315789474">
+<SimplePredicate field="dollarBN" operator="lessOrEqual" value="2.8865"/>
+                            </Node>
+                        </Node>
+                        <Node score="217.72750000000002">
+                            <SimplePredicate field="dollarBN" operator="lessOrEqual" value="3.1395"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="4">
+                <True/>
+                <TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+                    <MiningSchema>
+                        <MiningField name="diff"/>
+                        <MiningField name="OVol"/>
+                        <MiningField name="dollarBN"/>
+                        <MiningField name="dollarItau"/>
+                        <MiningField name="wDiff"/>
+                    </MiningSchema>
+                    <Node score="311.65555555555574">
+                        <True/>
+                        <Node score="193.18620689655177">
+                            <SimplePredicate field="dollarBN" operator="lessOrEqual" value="3.1395"/>
+                            <Node score="177.2573673870334">
+<SimplePredicate field="dollarItau" operator="lessOrEqual" value="3.1045"/>
+<Node score="256.95445544554457">
+    <SimplePredicate field="wDiff" operator="lessOrEqual" value="-212.25"/>
+</Node>
+                            </Node>
+                            <Node score="268.07804878048785">
+<SimplePredicate field="wDiff" operator="lessOrEqual" value="-235.25"/>
+                            </Node>
+                        </Node>
+                        <Node score="249.24314960629926">
+                            <SimplePredicate field="diff" operator="lessOrEqual" value="5.65"/>
+                            <Node score="337.4155120481928">
+<SimplePredicate field="wDiff" operator="lessOrEqual" value="-292.35"/>
+                            </Node>
+                        </Node>
+                        <Node score="330.585">
+                            <SimplePredicate field="OVol" operator="lessOrEqual" value="51750.0"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="5">
+                <True/>
+                <TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+                    <MiningSchema>
+                        <MiningField name="OpVol"/>
+                        <MiningField name="dollarBN"/>
+                        <MiningField name="wDiff"/>
+                    </MiningSchema>
+                    <Node score="221.76907216494845">
+                        <True/>
+                        <Node score="279.0">
+                            <SimplePredicate field="wDiff" operator="lessOrEqual" value="-261.25"/>
+                            <Node score="296.797808219178">
+<SimplePredicate field="OpVol" operator="lessOrEqual" value="1900.0"/>
+<Node score="365.8875">
+    <SimplePredicate field="wDiff" operator="lessOrEqual" value="-331.75"/>
+</Node>
+                            </Node>
+                            <Node score="280.0">
+<SimplePredicate field="OpVol" operator="lessOrEqual" value="2600.0"/>
+                            </Node>
+                        </Node>
+                        <Node score="169.3763925729443">
+                            <SimplePredicate field="dollarBN" operator="lessOrEqual" value="3.1035000000000004"/>
+                            <Node score="207.63266331658292">
+<SimplePredicate field="wDiff" operator="lessOrEqual" value="-186.25"/>
+                            </Node>
+                        </Node>
+                        <Node score="249.84357541899442">
+                            <SimplePredicate field="wDiff" operator="lessOrEqual" value="-235.25"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="6">
+                <True/>
+                <TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+                    <MiningSchema>
+                        <MiningField name="dollarBN"/>
+                        <MiningField name="dollarItau"/>
+                        <MiningField name="wDiff"/>
+                    </MiningSchema>
+                    <Node score="254.8755417956654">
+                        <True/>
+                        <Node score="183.89873417721515">
+                            <SimplePredicate field="dollarItau" operator="lessOrEqual" value="3.1399999999999997"/>
+                            <Node score="238.07000000000002">
+<SimplePredicate field="wDiff" operator="lessOrEqual" value="-221.25"/>
+<Node score="290.8101265822785">
+    <SimplePredicate field="wDiff" operator="lessOrEqual" value="-261.25"/>
+</Node>
+                            </Node>
+                            <Node score="172.5522033898305">
+<SimplePredicate field="dollarBN" operator="lessOrEqual" value="3.0395000000000003"/>
+                            </Node>
+                        </Node>
+                        <Node score="250.80619469026553">
+                            <SimplePredicate field="dollarBN" operator="lessOrEqual" value="3.9585"/>
+                            <Node score="275.95912408759125">
+<SimplePredicate field="dollarItau" operator="lessOrEqual" value="3.3095"/>
+                            </Node>
+                        </Node>
+                        <Node score="342.23557377049184">
+                            <SimplePredicate field="wDiff" operator="lessOrEqual" value="-299.75"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="7">
+                <True/>
+                <TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+                    <MiningSchema>
+                        <MiningField name="dollarBN"/>
+                        <MiningField name="dollarItau"/>
+                        <MiningField name="wDiff"/>
+                    </MiningSchema>
+                    <Node score="234.0968992248062">
+                        <True/>
+                        <Node score="183.95140562249">
+                            <SimplePredicate field="dollarBN" operator="lessOrEqual" value="3.1395"/>
+                            <Node score="280.8558139534884">
+<SimplePredicate field="wDiff" operator="lessOrEqual" value="-212.25"/>
+<Node score="234.15555555555557">
+    <SimplePredicate field="dollarItau" operator="lessOrEqual" value="2.9655"/>
+</Node>
+                            </Node>
+                            <Node score="171.1921875">
+<SimplePredicate field="dollarBN" operator="lessOrEqual" value="3.0395000000000003"/>
+                            </Node>
+                        </Node>
+                        <Node score="327.8554166666667">
+                            <SimplePredicate field="wDiff" operator="lessOrEqual" value="-299.75"/>
+                            <Node score="396.93583333333333">
+<SimplePredicate field="wDiff" operator="lessOrEqual" value="-361.5"/>
+                            </Node>
+                        </Node>
+                        <Node score="259.7107202680067">
+                            <SimplePredicate field="dollarBN" operator="lessOrEqual" value="9.014"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="8">
+                <True/>
+                <TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+                    <MiningSchema>
+                        <MiningField name="OVol"/>
+                        <MiningField name="dollarItau"/>
+                        <MiningField name="wDiff"/>
+                    </MiningSchema>
+                    <Node score="238.86713615023467">
+                        <True/>
+                        <Node score="194.00333333333336">
+                            <SimplePredicate field="dollarItau" operator="lessOrEqual" value="3.1399999999999997"/>
+                            <Node score="169.5636363636361">
+<SimplePredicate field="dollarItau" operator="lessOrEqual" value="3.1045"/>
+<Node score="192.2357894736842">
+    <SimplePredicate field="OVol" operator="lessOrEqual" value="350.0"/>
+</Node>
+                            </Node>
+                            <Node score="264.3625">
+<SimplePredicate field="wDiff" operator="lessOrEqual" value="-235.25"/>
+                            </Node>
+                        </Node>
+                        <Node score="328.7755793226381">
+                            <SimplePredicate field="wDiff" operator="lessOrEqual" value="-299.75"/>
+                            <Node score="396.312987012987">
+<SimplePredicate field="wDiff" operator="lessOrEqual" value="-361.5"/>
+                            </Node>
+                        </Node>
+                        <Node score="259.08147540983606">
+                            <SimplePredicate field="dollarItau" operator="lessOrEqual" value="8.5565"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="9">
+                <True/>
+                <TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+                    <MiningSchema>
+                        <MiningField name="dollarBN"/>
+                        <MiningField name="dollarItau"/>
+                        <MiningField name="wDiff"/>
+                    </MiningSchema>
+                    <Node score="256.91986970684036">
+                        <True/>
+                        <Node score="183.94401408450705">
+                            <SimplePredicate field="dollarItau" operator="lessOrEqual" value="3.1399999999999997"/>
+                            <Node score="176.68735632183908">
+<SimplePredicate field="dollarItau" operator="lessOrEqual" value="3.0045"/>
+<Node score="201.05479452054794">
+    <SimplePredicate field="dollarBN" operator="lessOrEqual" value="2.8865"/>
+</Node>
+                            </Node>
+                            <Node score="284.71309523809526">
+<SimplePredicate field="wDiff" operator="lessOrEqual" value="-235.25"/>
+                            </Node>
+                        </Node>
+                        <Node score="230.8448780487805">
+                            <SimplePredicate field="dollarBN" operator="lessOrEqual" value="3.9585"/>
+                            <Node score="278.77153284671533">
+<SimplePredicate field="wDiff" operator="lessOrEqual" value="-254.5"/>
+                            </Node>
+                        </Node>
+                        <Node score="343.9962648556876">
+                            <SimplePredicate field="wDiff" operator="lessOrEqual" value="-299.75"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="10">
+                <True/>
+                <TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+                    <MiningSchema>
+                        <MiningField name="OVol"/>
+                        <MiningField name="dollarBN"/>
+                        <MiningField name="wDiff"/>
+                    </MiningSchema>
+                    <Node score="229.5601351351352">
+                        <True/>
+                        <Node score="291.46201117318424">
+                            <SimplePredicate field="wDiff" operator="lessOrEqual" value="-261.25"/>
+                            <Node score="274.40774647887326">
+<SimplePredicate field="dollarBN" operator="lessOrEqual" value="3.9585"/>
+<Node score="296.204794520548">
+    <SimplePredicate field="dollarBN" operator="lessOrEqual" value="3.3120000000000003"/>
+</Node>
+                            </Node>
+                            <Node score="338.94136291600637">
+<SimplePredicate field="dollarBN" operator="lessOrEqual" value="8.000499999999999"/>
+                            </Node>
+                        </Node>
+                        <Node score="180.64114583333333">
+                            <SimplePredicate field="dollarBN" operator="lessOrEqual" value="3.1035000000000004"/>
+                            <Node score="203.02615384615385">
+<SimplePredicate field="dollarBN" operator="lessOrEqual" value="2.8865"/>
+                            </Node>
+                        </Node>
+                        <Node score="234.9125382262997">
+                            <SimplePredicate field="OVol" operator="lessOrEqual" value="32450.0"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="11">
+                <True/>
+                <TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+                    <MiningSchema>
+                        <MiningField name="diff"/>
+                        <MiningField name="dollarBN"/>
+                        <MiningField name="dollarItau"/>
+                        <MiningField name="wDiff"/>
+                    </MiningSchema>
+                    <Node score="229.77624633431094">
+                        <True/>
+                        <Node score="185.0597014925373">
+                            <SimplePredicate field="dollarBN" operator="lessOrEqual" value="3.1395"/>
+                            <Node score="223.99285714285725">
+<SimplePredicate field="diff" operator="lessOrEqual" value="2.95"/>
+<Node score="187.7047038327526">
+    <SimplePredicate field="dollarItau" operator="lessOrEqual" value="3.1045"/>
+</Node>
+                            </Node>
+                            <Node score="267.61">
+<SimplePredicate field="wDiff" operator="lessOrEqual" value="-227.25"/>
+                            </Node>
+                        </Node>
+                        <Node score="350.38548387096773">
+                            <SimplePredicate field="wDiff" operator="lessOrEqual" value="-299.75"/>
+                            <Node score="328.57442748091603">
+<SimplePredicate field="dollarItau" operator="lessOrEqual" value="4.423500000000001"/>
+                            </Node>
+                        </Node>
+                        <Node score="275.17386666666664">
+                            <SimplePredicate field="wDiff" operator="lessOrEqual" value="-254.5"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="12">
+                <True/>
+                <TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+                    <MiningSchema>
+                        <MiningField name="low"/>
+                        <MiningField name="OVol"/>
+                        <MiningField name="dollarItau"/>
+                        <MiningField name="wDiff"/>
+                    </MiningSchema>
+                    <Node score="166.5">
+                        <True/>
+                        <Node score="239.87537688442202">
+                            <SimplePredicate field="low" operator="lessOrEqual" value="342.25"/>
+                            <Node score="194.806508135169">
+<SimplePredicate field="OVol" operator="lessOrEqual" value="2850.0"/>
+<Node score="314.0019255455712">
+    <SimplePredicate field="wDiff" operator="lessOrEqual" value="-254.5"/>
+</Node>
+                            </Node>
+                            <Node score="314.97872340425533">
+<SimplePredicate field="dollarItau" operator="lessOrEqual" value="8.5565"/>
+                            </Node>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="13">
+                <True/>
+                <TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+                    <MiningSchema>
+                        <MiningField name="dollarItau"/>
+                        <MiningField name="wDiff"/>
+                    </MiningSchema>
+                    <Node score="166.64495412844036">
+                        <True/>
+                        <Node score="309.2666666666667">
+                            <SimplePredicate field="wDiff" operator="lessOrEqual" value="-261.25"/>
+                            <Node score="277.3037735849057">
+<SimplePredicate field="dollarItau" operator="lessOrEqual" value="3.958"/>
+<Node score="328.6021276595745">
+    <SimplePredicate field="wDiff" operator="lessOrEqual" value="-299.75"/>
+</Node>
+                            </Node>
+                            <Node score="373.55787401574804">
+<SimplePredicate field="wDiff" operator="lessOrEqual" value="-340.25"/>
+                            </Node>
+                        </Node>
+                        <Node score="222.70817610062898">
+                            <SimplePredicate field="wDiff" operator="lessOrEqual" value="-202.1"/>
+                            <Node score="249.26089108910892">
+<SimplePredicate field="wDiff" operator="lessOrEqual" value="-235.25"/>
+                            </Node>
+                        </Node>
+                        <Node score="190.01881188118813">
+                            <SimplePredicate field="wDiff" operator="lessOrEqual" value="-177.25"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="14">
+                <True/>
+                <TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+                    <MiningSchema>
+                        <MiningField name="diff"/>
+                        <MiningField name="OVol"/>
+                        <MiningField name="dollarBN"/>
+                        <MiningField name="dollarItau"/>
+                        <MiningField name="wDiff"/>
+                    </MiningSchema>
+                    <Node score="233.89463414634147">
+                        <True/>
+                        <Node score="311.41929347826084">
+                            <SimplePredicate field="wDiff" operator="lessOrEqual" value="-261.25"/>
+                            <Node score="282.082252559727">
+<SimplePredicate field="dollarItau" operator="lessOrEqual" value="3.958"/>
+<Node score="308.9384615384615">
+    <SimplePredicate field="diff" operator="lessOrEqual" value="-8.25"/>
+</Node>
+                            </Node>
+                            <Node score="345.8577215189873">
+<SimplePredicate field="OVol" operator="lessOrEqual" value="1750.0"/>
+                            </Node>
+                        </Node>
+                        <Node score="181.4975352112676">
+                            <SimplePredicate field="dollarItau" operator="lessOrEqual" value="3.1045"/>
+                            <Node score="200.3128205128205">
+<SimplePredicate field="dollarBN" operator="lessOrEqual" value="2.8865"/>
+                            </Node>
+                        </Node>
+                        <Node score="211.94897959183675">
+                            <SimplePredicate field="dollarItau" operator="lessOrEqual" value="3.1399999999999997"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="15">
+                <True/>
+                <TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+                    <MiningSchema>
+                        <MiningField name="ODiff"/>
+                        <MiningField name="dollarBN"/>
+                        <MiningField name="wDiff"/>
+                    </MiningSchema>
+                    <Node score="236.7136000000001">
+                        <True/>
+                        <Node score="184.61018867924528">
+                            <SimplePredicate field="dollarBN" operator="lessOrEqual" value="3.1395"/>
+                            <Node score="285.55578947368423">
+<SimplePredicate field="wDiff" operator="lessOrEqual" value="-221.25"/>
+<Node score="237.87692307692308">
+    <SimplePredicate field="dollarBN" operator="lessOrEqual" value="2.9665"/>
+</Node>
+                            </Node>
+                            <Node score="171.03733766233765">
+<SimplePredicate field="dollarBN" operator="lessOrEqual" value="3.0395000000000003"/>
+                            </Node>
+                        </Node>
+                        <Node score="345.64522821576776">
+                            <SimplePredicate field="wDiff" operator="lessOrEqual" value="-299.75"/>
+                            <Node score="327.9397660818713">
+<SimplePredicate field="ODiff" operator="lessOrEqual" value="-50.0"/>
+                            </Node>
+                        </Node>
+                        <Node score="260.12673434856174">
+                            <SimplePredicate field="dollarBN" operator="lessOrEqual" value="9.014"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="16">
+                <True/>
+                <TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+                    <MiningSchema>
+                        <MiningField name="dollarBN"/>
+                        <MiningField name="dollarItau"/>
+                        <MiningField name="wDiff"/>
+                    </MiningSchema>
+                    <Node score="233.47477064220183">
+                        <True/>
+                        <Node score="302.63651551312654">
+                            <SimplePredicate field="wDiff" operator="lessOrEqual" value="-261.25"/>
+                            <Node score="341.2935064935066">
+<SimplePredicate field="wDiff" operator="lessOrEqual" value="-325.1"/>
+<Node score="366.85805243445697">
+    <SimplePredicate field="dollarBN" operator="lessOrEqual" value="4.9795"/>
+</Node>
+                            </Node>
+                            <Node score="279.48">
+<SimplePredicate field="dollarItau" operator="lessOrEqual" value="3.958"/>
+                            </Node>
+                        </Node>
+                        <Node score="181.83071428571427">
+                            <SimplePredicate field="dollarBN" operator="lessOrEqual" value="3.1035000000000004"/>
+                            <Node score="201.4831168831169">
+<SimplePredicate field="dollarBN" operator="lessOrEqual" value="2.8865"/>
+                            </Node>
+                        </Node>
+                        <Node score="180.6875">
+                            <SimplePredicate field="dollarItau" operator="lessOrEqual" value="3.1045"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="17">
+                <True/>
+                <TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+                    <MiningSchema>
+                        <MiningField name="diff"/>
+                        <MiningField name="OVol"/>
+                        <MiningField name="dollarBN"/>
+                        <MiningField name="dollarItau"/>
+                        <MiningField name="wDiff"/>
+                    </MiningSchema>
+                    <Node score="240.1735">
+                        <True/>
+                        <Node score="210.0763636363636">
+                            <SimplePredicate field="OVol" operator="lessOrEqual" value="950.0"/>
+                            <Node score="392.6364285714286">
+<SimplePredicate field="wDiff" operator="lessOrEqual" value="-254.5"/>
+<Node score="298.8200674536256">
+    <SimplePredicate field="dollarItau" operator="lessOrEqual" value="4.423500000000001"/>
+</Node>
+                            </Node>
+                            <Node score="190.97701149425288">
+<SimplePredicate field="diff" operator="lessOrEqual" value="2.95"/>
+                            </Node>
+                        </Node>
+                        <Node score="333.57142857142856">
+                            <SimplePredicate field="OVol" operator="lessOrEqual" value="1050.0"/>
+                        </Node>
+                        <Node score="308.7791044776119">
+                            <SimplePredicate field="dollarBN" operator="lessOrEqual" value="8.5535"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="18">
+                <True/>
+                <TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+                    <MiningSchema>
+                        <MiningField name="OVol"/>
+                        <MiningField name="ODiff"/>
+                        <MiningField name="dollarBN"/>
+                        <MiningField name="dollarItau"/>
+                        <MiningField name="wDiff"/>
+                    </MiningSchema>
+                    <Node score="240.47978723404245">
+                        <True/>
+                        <Node score="231.99264705882354">
+                            <SimplePredicate field="ODiff" operator="lessOrEqual" value="-550.0"/>
+                            <Node score="292.56625000000014">
+<SimplePredicate field="dollarItau" operator="lessOrEqual" value="8.5565"/>
+<Node score="333.54257425742577">
+    <SimplePredicate field="wDiff" operator="lessOrEqual" value="-315.25"/>
+</Node>
+                            </Node>
+                            <Node score="254.38888888888889">
+<SimplePredicate field="dollarBN" operator="lessOrEqual" value="9.014"/>
+                            </Node>
+                        </Node>
+                        <Node score="345.38005181347137">
+                            <SimplePredicate field="OVol" operator="lessOrEqual" value="950.0"/>
+                            <Node score="218.6825771324864">
+<SimplePredicate field="dollarItau" operator="lessOrEqual" value="3.958"/>
+                            </Node>
+                        </Node>
+                        <Node score="309.0489932885906">
+                            <SimplePredicate field="dollarBN" operator="lessOrEqual" value="8.5535"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="19">
+                <True/>
+                <TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+                    <MiningSchema>
+                        <MiningField name="dollarBN"/>
+                        <MiningField name="wDiff"/>
+                    </MiningSchema>
+                    <Node score="225.93265993265993">
+                        <True/>
+                        <Node score="168.59197080291972">
+                            <SimplePredicate field="dollarBN" operator="lessOrEqual" value="3.1395"/>
+                            <Node score="281.5625">
+<SimplePredicate field="wDiff" operator="lessOrEqual" value="-221.25"/>
+<Node score="235.3235294117647">
+    <SimplePredicate field="dollarBN" operator="lessOrEqual" value="2.9665"/>
+</Node>
+                            </Node>
+                            <Node score="197.0954081632653">
+<SimplePredicate field="wDiff" operator="lessOrEqual" value="-186.25"/>
+                            </Node>
+                        </Node>
+                        <Node score="307.07356321839075">
+                            <SimplePredicate field="wDiff" operator="lessOrEqual" value="-292.35"/>
+                            <Node score="342.5175806451613">
+<SimplePredicate field="dollarBN" operator="lessOrEqual" value="8.000499999999999"/>
+                            </Node>
+                        </Node>
+                        <Node score="268.71143552311435">
+                            <SimplePredicate field="wDiff" operator="lessOrEqual" value="-242.5"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="20">
+                <True/>
+                <TreeModel functionName="regression" missingValueStrategy="nullPrediction" noTrueChildStrategy="returnLastPrediction">
+                    <MiningSchema>
+                        <MiningField name="OVol"/>
+                        <MiningField name="dollarBN"/>
+                        <MiningField name="dollarItau"/>
+                        <MiningField name="wDiff"/>
+                    </MiningSchema>
+                    <Node score="241.10594059405952">
+                        <True/>
+                        <Node score="198.25359281437125">
+                            <SimplePredicate field="dollarItau" operator="lessOrEqual" value="3.1399999999999997"/>
+                            <Node score="170.98659003831418">
+<SimplePredicate field="dollarItau" operator="lessOrEqual" value="3.0045"/>
+<Node score="233.92835820895525">
+    <SimplePredicate field="wDiff" operator="lessOrEqual" value="-202.1"/>
+</Node>
+                            </Node>
+                            <Node score="256.4246575342466">
+<SimplePredicate field="dollarBN" operator="lessOrEqual" value="3.0395000000000003"/>
+                            </Node>
+                        </Node>
+                        <Node score="256.0554455445544">
+                            <SimplePredicate field="OVol" operator="lessOrEqual" value="50.0"/>
+                            <Node score="348.39908675799086">
+<SimplePredicate field="wDiff" operator="lessOrEqual" value="-299.75"/>
+                            </Node>
+                        </Node>
+                        <Node score="296.4482978723404">
+                            <SimplePredicate field="dollarBN" operator="lessOrEqual" value="8.5535"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+        </Segmentation>
+    </MiningModel>
+</PMML>
