@@ -1,6 +1,6 @@
 package edu.fiuba.fpfiuba43.services
 
-import cats.effect.{Effect, IO, Resource, Sync}
+import cats.effect.{Effect, Resource, Sync}
 import doobie.hikari.HikariTransactor
 import edu.fiuba.fpfiuba43.models.{InputRow, Score}
 import org.http4s.EntityDecoder
