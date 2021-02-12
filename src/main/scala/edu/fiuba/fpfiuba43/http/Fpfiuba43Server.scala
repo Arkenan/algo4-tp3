@@ -15,7 +15,7 @@ import scala.concurrent.ExecutionContext.global
 
 object Fpfiuba43Server {
 
-  def stream[F[_]: ConcurrentEffect](implicit cs: ContextShift[F],  T: Timer[F]): Stream[F, Nothing] = {
+  def stream[F[_]: ConcurrentEffect](implicit T: Timer[F], cs: ContextShift[F]  ): Stream[F, Nothing] = {
     // Transactor to connect to our DB.
     val transactor: Resource[F, HikariTransactor[F]] =
       for {
@@ -33,8 +33,7 @@ object Fpfiuba43Server {
 
     for {
       client <- BlazeClientBuilder[F](global).stream
-      db = DB(transactor)
-      scoreService = new ScoreServiceRest[F](client, db)
+      scoreService = new ScoreServiceRest[F](client, transactor)
       healthCheck = new HealthCheckImpl[F]("changeme")
       httpApp = (Fpfiuba43Routes.healthCheckRoutes[F](healthCheck)<+>
         Fpfiuba43Routes.scoreRoute[F](scoreService)).orNotFound

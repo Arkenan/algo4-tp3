@@ -1,22 +1,24 @@
 package edu.fiuba.fpfiuba43.services
 
-import cats.effect.{Effect, IO, Sync}
-import edu.fiuba.fpfiuba43.http.DB
+import cats.effect.{Effect, IO, Resource, Sync}
+import doobie.hikari.HikariTransactor
 import edu.fiuba.fpfiuba43.models.{InputRow, Score}
 import org.http4s.EntityDecoder
 import org.http4s.circe._
 import org.http4s.client.Client
+import doobie.implicits._
 
 trait ScoreService[F[_]] {
   def getScore(row: InputRow): F[Score]
 }
 
-class ScoreServiceRest[F[_]: Sync:Effect](client: Client[F], db: DB) extends ScoreService[F] {
+class ScoreServiceRest[F[_]: Sync:Effect](client: Client[F], tr: Resource[F, HikariTransactor[F]])  extends ScoreService[F] {
 
-  //implicit val decoder: EntityDecoder[F, InputRow2Score] = jsonOf[F, InputRow2Score]
   implicit val decoder: EntityDecoder[F, Score] = jsonOf[F, Score]
 
   override def getScore(row: InputRow): F[Score] = {
-    db.getScore(row.id)
+    tr.use { xa =>
+       sql"select score from fptp.scores where hash_code= ${row.id}".query[Score].unique.transact(xa)
+      }
+    }
   }
-}
