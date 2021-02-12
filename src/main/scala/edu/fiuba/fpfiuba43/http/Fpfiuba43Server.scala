@@ -6,25 +6,22 @@ import fs2.Stream
 import org.http4s.client.blaze.BlazeClientBuilder
 import org.http4s.implicits._
 import cats.implicits._
-import doobie.Transactor
 import doobie.hikari.HikariTransactor
 import doobie.util.ExecutionContexts
 import org.http4s.server.blaze.BlazeServerBuilder
 import org.http4s.server.middleware.Logger
 
-import scala.concurrent.ExecutionContext
 import scala.concurrent.ExecutionContext.global
 
 object Fpfiuba43Server {
 
-  def stream[F[_]: ConcurrentEffect](implicit T: Timer[F]): Stream[F, Nothing] = {
-    implicit val cs: ContextShift[IO] = IO.contextShift(ExecutionContext.global)
+  def stream[F[_]: ConcurrentEffect](implicit cs: ContextShift[F],  T: Timer[F]): Stream[F, Nothing] = {
     // Transactor to connect to our DB.
-    val transactor: Resource[IO, HikariTransactor[IO]] =
+    val transactor: Resource[F, HikariTransactor[F]] =
       for {
-        ce <- ExecutionContexts.fixedThreadPool[IO](32)
-        be <- Blocker[IO]
-        xa <- HikariTransactor.newHikariTransactor[IO](
+        ce <- ExecutionContexts.fixedThreadPool[F](32)
+        be <- Blocker[F]
+        xa <- HikariTransactor.newHikariTransactor[F](
           "org.postgresql.Driver",
           "jdbc:postgresql://localhost:5432/fpalgo",
           "fiuba",
