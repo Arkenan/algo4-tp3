@@ -2,6 +2,8 @@ package edu.fiuba.fpfiuba43.models
 
 import java.time.LocalDateTime
 
+import io.circe.generic.semiauto._
+import io.circe.{Decoder, Encoder}
 case class InputRow(id: Int,
                     date: LocalDateTime,
                     open: Option[Double],
@@ -18,3 +20,16 @@ case class InputRow(id: Int,
                     dollarBN: Double,
                     dollarItau: Double,
                     wDiff: Double)
+
+object InputRow {
+  implicit val decoder: Decoder[InputRow] = deriveDecoder
+  implicit val encoder: Encoder[InputRow] = deriveEncoder
+}
+
+
+case class Score(score: Double)
+
+object Score {
+  implicit val decoder: Decoder[Score] = deriveDecoder
+  implicit val encoder: Encoder[Score] = deriveEncoder
+}
