@@ -1,13 +1,13 @@
 package edu.fiuba.fpfiuba43.http
 
-import cats.effect.{Blocker, ConcurrentEffect, ContextShift, IO, Resource, Timer}
+import cats.effect.{Blocker, ConcurrentEffect, ContextShift, Resource, Timer}
+import cats.implicits._
+import doobie.hikari.HikariTransactor
+import doobie.util.ExecutionContexts
 import edu.fiuba.fpfiuba43.services.{HealthCheckImpl, ScoreServiceRest}
 import fs2.Stream
 import org.http4s.client.blaze.BlazeClientBuilder
 import org.http4s.implicits._
-import cats.implicits._
-import doobie.hikari.HikariTransactor
-import doobie.util.ExecutionContexts
 import org.http4s.server.blaze.BlazeServerBuilder
 import org.http4s.server.middleware.Logger
 
@@ -33,7 +33,7 @@ object Fpfiuba43Server {
 
     for {
       client <- BlazeClientBuilder[F](global).stream
-      scoreService = new ScoreServiceRest[F](client, transactor)
+      scoreService = new ScoreServiceRest[F](transactor)
       healthCheck = new HealthCheckImpl[F]("changeme")
       httpApp = (Fpfiuba43Routes.healthCheckRoutes[F](healthCheck)<+>
         Fpfiuba43Routes.scoreRoute[F](scoreService)).orNotFound

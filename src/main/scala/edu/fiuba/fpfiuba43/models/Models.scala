@@ -4,7 +4,6 @@ import java.time.LocalDateTime
 
 import io.circe.generic.semiauto._
 import io.circe.{Decoder, Encoder}
-import org.http4s.Response
 case class InputRow(id: Int,
                     date: LocalDateTime,
                     open: Option[Double],

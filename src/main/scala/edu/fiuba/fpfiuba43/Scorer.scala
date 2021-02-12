@@ -3,13 +3,14 @@ package edu.fiuba.fpfiuba43
 import java.io.File
 import java.util
 
-import edu.fiuba.fpfiuba43.models.InputRow
+import cats.effect.IO
+import edu.fiuba.fpfiuba43.models.{InputRow, Score}
 import org.dmg.pmml.FieldName
 import org.jpmml.evaluator.{EvaluatorUtil, FieldValue, InputField, LoadingModelEvaluatorBuilder}
 
 object Scorer {
 
-    def score(row: InputRow): Double = {
+    def score(row: InputRow): IO[Score] = {
       val evaluator = new LoadingModelEvaluatorBuilder().load(new File("model.pmml")).build
 
       val inputFields : util.List[InputField] = evaluator.getInputFields
@@ -25,6 +26,8 @@ object Scorer {
 
       val resultRecord = EvaluatorUtil.decodeAll(results)
 
-      resultRecord.get("prediction").toString.toDouble
+      IO(Score(resultRecord.get("prediction").toString.toDouble))
+
     }
 }
+
