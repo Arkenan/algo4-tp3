@@ -2,8 +2,8 @@ package edu.fiuba.fpfiuba43.http
 
 import cats.effect.Sync
 import cats.implicits._
-import edu.fiuba.fpfiuba43.models.{AoE2Input, InputRow}
-import edu.fiuba.fpfiuba43.services.{AoE2Service, HealthCheck, ScoreService}
+import edu.fiuba.fpfiuba43.models.{ InputRow}
+import edu.fiuba.fpfiuba43.services.{HealthCheck, ScoreService}
 import io.circe.syntax._
 import org.http4s.HttpRoutes
 import org.http4s.circe._
@@ -32,8 +32,7 @@ object Fpfiuba43Routes {
       case req @  POST -> Root / "score"  =>
         for {
           re <- req.as[InputRow]
-          r <-  scoreService.getScore(re)
-          resp <- Ok {r.asJson}
+          resp <- Ok {re.asJson}
         } yield resp
     }
   }

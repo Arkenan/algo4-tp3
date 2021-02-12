@@ -22,9 +22,20 @@ case class InputRow(id: Int,
                     dollarItau: Double,
                     wDiff: Double)
 
+object InputRow {
+  implicit val decoder: Decoder[InputRow] = deriveDecoder
+  implicit val encoder: Encoder[InputRow] = deriveEncoder
+}
 case class InputRow2Score(score: Double)
 
 object InputRow2Score {
   implicit val decoder: Decoder[InputRow2Score] = deriveDecoder
   implicit val encoder: Encoder[InputRow2Score] = deriveEncoder
+}
+
+case class Score(hash_code: Int,score: Double)
+
+object Score {
+  implicit val decoder: Decoder[Score] = deriveDecoder
+  implicit val encoder: Encoder[Score] = deriveEncoder
 }
