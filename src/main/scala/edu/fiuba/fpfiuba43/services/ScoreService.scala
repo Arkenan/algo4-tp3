@@ -1,7 +1,7 @@
 package edu.fiuba.fpfiuba43.services
 
 import cats.Monad
-import cats.effect.{Sync}
+import cats.effect.Sync
 import edu.fiuba.fpfiuba43.models.{InputRow, Score}
 import edu.fiuba.fpfiuba43.{Cache, Scorer}
 
