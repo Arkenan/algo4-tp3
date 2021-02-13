@@ -13,9 +13,10 @@ trait Scorer {
 class JpmmlScorer(modelPathname: String) extends Scorer {
   val evaluator: ModelEvaluator[_] = new LoadingModelEvaluatorBuilder().load(new File(modelPathname)).build
   val inputFields: util.List[InputField] = evaluator.getInputFields
-  val arguments = new util.LinkedHashMap[FieldName, FieldValue]
 
   override def score(row: InputRow): Score = {
+    val arguments = new util.LinkedHashMap[FieldName, FieldValue]
+
     inputFields forEach (inputField => {
       val inputName = inputField.getName
       val inputValue = inputField.prepare(row.getField(inputName.getValue))
