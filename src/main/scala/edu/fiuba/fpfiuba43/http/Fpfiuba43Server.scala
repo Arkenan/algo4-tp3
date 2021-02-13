@@ -2,7 +2,7 @@ package edu.fiuba.fpfiuba43.http
 
 import cats.effect.{ConcurrentEffect, ContextShift, Timer}
 import cats.implicits._
-import edu.fiuba.fpfiuba43.{Cache, FiubaTransactor, Scorer}
+import edu.fiuba.fpfiuba43.{PostgreSQLCache, FiubaTransactor, JpmmlScorer}
 import edu.fiuba.fpfiuba43.services.{HealthCheckImpl, ScoreServiceRest}
 import fs2.Stream
 import org.http4s.client.blaze.BlazeClientBuilder
@@ -16,8 +16,8 @@ object Fpfiuba43Server {
 
   def stream[F[_]: ConcurrentEffect](implicit T: Timer[F], cs: ContextShift[F]): Stream[F, Nothing] = {
 
-    val cache = Cache(FiubaTransactor.transactor)
-    val scorer = new Scorer("model.pmml")
+    val cache = new PostgreSQLCache(FiubaTransactor.transactor)
+    val scorer = new JpmmlScorer("model.pmml")
 
     for {
       _ <- BlazeClientBuilder[F](global).stream
