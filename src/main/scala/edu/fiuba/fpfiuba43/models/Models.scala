@@ -19,11 +19,30 @@ case class InputRow(id: Int,
                     unit: String,
                     dollarBN: Double,
                     dollarItau: Double,
-                    wDiff: Double)
+                    wDiff: Double) {
+  def toDataFrameRow(): DataFrameRow = DataFrameRow(open, high, low, last, close, diff, oVol, oDiff, opVol, dollarBN,
+                                                    dollarItau, wDiff)
+}
+
+case class DataFrameRow(
+                         open: Option[Double],
+                         high: Option[Double],
+                         low: Option[Double],
+                         last: Double,
+                         close: Double,
+                         diff: Double,
+                         OVol: Option[Int],
+                         ODiff: Option[Int],
+                         OpVol: Option[Int],
+                         dollarBN: Double,
+                         dollarItau: Double,
+                         wDiff: Double
+                       )
 
 object InputRow {
   implicit val decoder: Decoder[InputRow] = deriveDecoder
   implicit val encoder: Encoder[InputRow] = deriveEncoder
+
 }
 
 

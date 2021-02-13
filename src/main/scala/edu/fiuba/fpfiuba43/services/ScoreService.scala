@@ -16,9 +16,9 @@ class ScoreServiceRest[F[_]: Sync:Effect]( tr: Resource[F, HikariTransactor[F]])
 
   implicit val decoder: EntityDecoder[F, Score] = jsonOf[F, Score]
   override def getScore(row: InputRow): F[Score] = {
-    tr.use { xa =>
-     sql"select score from fptp.scores where hash_code= ${row.id}".query[Score].unique.transact(xa)
-    }
+    //tr.use { xa =>
+     //sql"select score from fptp.scores where hash_code= ${row.id}".query[Score].unique.transact(xa)
+    //}
     Scorer.score(row).to[F]
   }
 

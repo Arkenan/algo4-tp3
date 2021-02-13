@@ -6,6 +6,8 @@ import java.util
 import cats.effect.{IO, SyncIO}
 import edu.fiuba.fpfiuba43.models.{InputRow, Score}
 import org.dmg.pmml.FieldName
+import org.http4s.EntityDecoder
+import org.http4s.circe.jsonOf
 import org.jpmml.evaluator.{EvaluatorUtil, FieldValue, InputField, LoadingModelEvaluatorBuilder}
 
 object Scorer {
@@ -18,7 +20,7 @@ object Scorer {
 
       inputFields forEach (inputField => {
         val inputName = inputField.getName
-        val inputValue = inputField.prepare(row)
+        val inputValue = inputField.prepare(row.toDataFrameRow())
         arguments.put(inputName, inputValue)
       })
 
@@ -27,7 +29,8 @@ object Scorer {
       val resultRecord = EvaluatorUtil.decodeAll(results)
 
       IO(Score(resultRecord.get("prediction").toString.toDouble))
-
     }
-}
 
+
+
+}
