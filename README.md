@@ -107,3 +107,10 @@ El trabajo se compone de dos endpoints:
         * Se guarda el valor en la BDD.
         * Se devuelve el score.
 
+## Performance 
+
+Al tomar el tiempo entre que se manda el request y se recibe el response, la primera vez, donde se debe calcular el score dado que no lo tiene en la BDD, se tarda ```0.505249827``` segundos. 
+
+Cuando se vuelve a mandar el mismo request y el score se encuentra en la BDD, el tiempo que tarda es ```0.4858165``` segundos. 
+
+Esto demuestra que agregar una cache no optimiza de manera significativa la obtención del score.
