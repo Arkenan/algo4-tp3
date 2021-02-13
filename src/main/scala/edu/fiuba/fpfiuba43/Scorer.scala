@@ -20,7 +20,7 @@ object Scorer {
 
       inputFields forEach (inputField => {
         val inputName = inputField.getName
-        val inputValue = inputField.prepare(row.toDataFrameRow())
+        val inputValue = inputField.prepare(row.getField(inputName.getValue))
         arguments.put(inputName, inputValue)
       })
 

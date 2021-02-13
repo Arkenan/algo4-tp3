@@ -20,24 +20,24 @@ case class InputRow(id: Int,
                     dollarBN: Double,
                     dollarItau: Double,
                     wDiff: Double) {
-  def toDataFrameRow(): DataFrameRow = DataFrameRow(open, high, low, last, close, diff, oVol, oDiff, opVol, dollarBN,
-                                                    dollarItau, wDiff)
-}
 
-case class DataFrameRow(
-                         open: Option[Double],
-                         high: Option[Double],
-                         low: Option[Double],
-                         last: Double,
-                         close: Double,
-                         diff: Double,
-                         OVol: Option[Int],
-                         ODiff: Option[Int],
-                         OpVol: Option[Int],
-                         dollarBN: Double,
-                         dollarItau: Double,
-                         wDiff: Double
-                       )
+  def getField(field: String) = {
+    field match {
+      case "open" => open.getOrElse(null)
+      case "high" => high.getOrElse(null)
+      case "low" => low.getOrElse(null)
+      case "last" => last
+      case "close" => close
+      case "diff" => diff
+      case "OVol" => oVol.getOrElse(null)
+      case "ODiff" => oDiff.getOrElse(null)
+      case "OpVol" => opVol.getOrElse(null)
+      case "dollarBN" => dollarBN
+      case "dollarItau" => dollarItau
+      case "wDiff" => wDiff
+    }
+  }
+}
 
 object InputRow {
   implicit val decoder: Decoder[InputRow] = deriveDecoder
