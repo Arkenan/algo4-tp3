@@ -29,3 +29,6 @@ libraryDependencies ++= Seq(
   "io.circe"           %% "circe-generic"        % CirceVersion,
   "org.specs2"         %% "specs2-core"          % Specs2Version % Test
 )
+
+libraryDependencies += "org.scalamock" %% "scalamock" % "5.1.0" % Test
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.1.0" % Test
