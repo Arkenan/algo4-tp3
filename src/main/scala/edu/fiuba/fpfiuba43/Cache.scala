@@ -1,25 +1,31 @@
 package edu.fiuba.fpfiuba43
 
+import cats.Monad
 import cats.effect.{Effect, Resource, Sync}
 import doobie.hikari.HikariTransactor
 import doobie.implicits.{toSqlInterpolator, _}
 import edu.fiuba.fpfiuba43.models.Score
 
-case class Cache[F[_]: Sync:Effect](tr: Resource[F, HikariTransactor[F]]) {
+case class Cache[F[_]: Sync: Monad](tr: Resource[F, HikariTransactor[F]]) {
 
-  def getScoreFromCache(hashedRow: Double): F[Option[Score]] = {
-    tr.use { xa =>
-      sql"select score from fptp.scores where hash_code= ${hashedRow}".query[Score].option.transact(xa)
+  def getScoreFromCache(hashCode: Double): F[Option[Score]] = {
+    tr.use { transactor =>
+      sql"select score from fptp.scores where hash_code= ${hashCode}"
+        .query[Score]
+        .option
+        .transact(transactor)
     }
   }
 
-  def saveScoreInCache(hashRow: Double, score: Double): F[Nothing] = {
-    tr.use { xa =>
-      sql"INSERT INTO fptp.dataset" ++
-        sql"(hash_code, score)" ++
-        sql"VALUES" ++
-        sql"(${hashRow}, ${score})"
-          .query[Boolean].option.transact(xa)
+  def saveScoreInCache(hashCode: Double, score: Score): F[Unit] = {
+    // TODO: ojo que acá estamos ignorando el resultado int.
+    tr.use { transactor =>
+      implicitly[Monad[F]].map(
+      sql"INSERT INTO fptp.scores (hash_code, score) VALUES (${hashCode}, ${score.score})"
+        .update.run.transact(transactor))(_ => ())
+
     }
+
+
   }
 }

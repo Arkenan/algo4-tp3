@@ -10,7 +10,7 @@ import org.jpmml.evaluator.{EvaluatorUtil, FieldValue, InputField, LoadingModelE
 
 object Scorer {
 
-    def score(row: InputRow): IO[Score] = {
+    def score(row: InputRow): Score = {
       val evaluator = new LoadingModelEvaluatorBuilder().load(new File("model.pmml")).build
 
       val inputFields : util.List[InputField] = evaluator.getInputFields
@@ -26,8 +26,7 @@ object Scorer {
 
       val resultRecord = EvaluatorUtil.decodeAll(results)
 
-      IO(Score(resultRecord.get("prediction").toString.toDouble))
-
+      Score(resultRecord.get("prediction").toString.toDouble)
     }
 }
 
