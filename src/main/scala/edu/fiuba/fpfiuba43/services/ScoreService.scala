@@ -1,7 +1,7 @@
 package edu.fiuba.fpfiuba43.services
 
 import cats.Monad
-import cats.effect.{Effect, Resource, Sync}
+import cats.effect.{Resource, Sync}
 import doobie.hikari.HikariTransactor
 import edu.fiuba.fpfiuba43.models.{InputRow, Score}
 import edu.fiuba.fpfiuba43.{Cache, Scorer}
@@ -19,17 +19,14 @@ class ScoreServiceRest[F[_]: Sync: Monad](tr: Resource[F, HikariTransactor[F]]) 
     val db = Cache(tr)
 
     val hashedRow = row.hashCode()
-    implicitly[Monad[F]].flatMap(db.getScoreFromCache(hashedRow))(result => {
-      result match {
-        case Some(score) => implicitly[Monad[F]].pure(score)
-        case None => {
-          val promisedScore = implicitly[Monad[F]].pure(Scorer.score(row))
-          implicitly[Monad[F]].flatMap(promisedScore)(score => {
-            db.saveScoreInCache(hashedRow, score)
-            implicitly[Monad[F]].pure(score)
-          })
-        }
-      }
-    })
+    implicitly[Monad[F]].flatMap(db.getScoreFromCache(hashedRow)) {
+      case Some(score) => implicitly[Monad[F]].pure(score)
+      case None =>
+        val promisedScore = implicitly[Monad[F]].pure(Scorer.score(row))
+        implicitly[Monad[F]].flatMap(promisedScore)(score => {
+          db.saveScoreInCache(hashedRow, score)
+          implicitly[Monad[F]].pure(score)
+        })
+    }
   }
 }
