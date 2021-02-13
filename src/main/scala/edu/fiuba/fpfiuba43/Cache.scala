@@ -23,9 +23,7 @@ case class Cache[F[_]: Sync: Monad](tr: Resource[F, HikariTransactor[F]]) {
       implicitly[Monad[F]].map(
       sql"INSERT INTO fptp.scores (hash_code, score) VALUES (${hashCode}, ${score.score})"
         .update.run.transact(transactor))(_ => ())
-
     }
-
-
   }
+
 }
