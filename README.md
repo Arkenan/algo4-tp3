@@ -13,10 +13,54 @@ Para correr el proyecto es neceario tener instalado SBT.
 
 ### Ejecución del programa
 
-Por el momento el programa se ejecuta correctamente en IntelliJ idea, pero no en SBT por un problema de dependencias de
-Spark.
+Para ejecutar el programa se debe corer:
 
-El programa no acepta argumentos y muestra por pantalla la separación entre sets de entrenamiento y testing.
+```
+sbt run
+```
+
+Puede probar la rest api a través de los siguientes endpoints:
+
+```
+localhost:8080/health-check
+```
+ó
+
+```
+localhost:8080/score
+```
+Para este segundo debe pasar en el body un json con la estructura correspondiente al InputRow definida en el archivo ```Models.scala```
+A continuación se presenta un ejemplo del mismo:
+
+```json
+{"id" : 158,
+ "date" : "2020-12-02T14:49:15.841609",
+ "last" : 0.0,
+ "close" : 148.0,
+ "diff" : 0.0,
+ "curr": "D",
+ "unit" : "TONS",
+ "dollarBN": 2.919,
+ "dollarItau": 2.91,
+ "wDiff": -148.0
+}
+```
 
 ### Output
-...
+Al hacer un ```GET``` al endpoint ```/health-check``` se retornará la siguiente iformación:
+
+```json
+{
+    "version": "0.1",
+    "maintainer": "Disfuncionales"
+}
+```
+
+Si en cambio realizamos un ```POST``` al endpoint ```/score``` se retorna un json de la siguiente estructura:
+
+```json
+{
+    "score": 180.0618351404948
+}
+```
+
