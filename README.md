@@ -79,11 +79,11 @@ src/
 --- models/Models.scala # Modelo en Scala de un DataFrameRow
 --- models/HealthCheckMessage.scala # Obtiene el mensaje que se envía cuando se realiza el request.
 --- services/HealthCheck # Toma el mensaje de HealthCheckMessage y lo devuelve. 
---- services/ScoreCheck.scala # Coordina el proceso de ejecución para obtener el score.  
---- Cache.scala # Archivo con utilidades para leer y guardar elementos en la BDD.
+--- services/ScoreService.scala # Coordina el proceso de ejecución para obtener el score.  
+--- Cache.scala # Clase con utilidades para leer y guardar elementos en la BDD.
 --- FiubaTransactor.scala # Crea el transactor para poder conectar con la BDD. 
 --- Main.scala # Archivo principal de ejecución.
---- Scorer # Levanta el archivo PMML y obtiene el score del row envíado en el request.
+--- Scorer.scala # Levanta el archivo PMML y obtiene el score del row envíado en el request.
 ```
 
 ### Pipeline
