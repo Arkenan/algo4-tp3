@@ -1,15 +1,13 @@
 package edu.fiuba.fpfiuba43
 
-import java.io.File
-import java.util
-
-import cats.effect.IO
 import edu.fiuba.fpfiuba43.models.{InputRow, Score}
 import org.dmg.pmml.FieldName
 import org.jpmml.evaluator.{EvaluatorUtil, FieldValue, InputField, LoadingModelEvaluatorBuilder}
 
-object Scorer {
+import java.io.File
+import java.util
 
+object Scorer {
     def score(row: InputRow): Score = {
       val evaluator = new LoadingModelEvaluatorBuilder().load(new File("model.pmml")).build
 
@@ -18,7 +16,7 @@ object Scorer {
 
       inputFields forEach (inputField => {
         val inputName = inputField.getName
-        val inputValue = inputField.prepare(row)
+        val inputValue = inputField.prepare(row.getField(inputName.getValue))
         arguments.put(inputName, inputValue)
       })
 
@@ -29,4 +27,3 @@ object Scorer {
       Score(resultRecord.get("prediction").toString.toDouble)
     }
 }
-
