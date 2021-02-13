@@ -1,9 +1,8 @@
 package edu.fiuba.fpfiuba43.http
 
-import cats.effect.{Blocker, ConcurrentEffect, ContextShift, Resource, Timer}
+import cats.effect.{ConcurrentEffect, ContextShift, Timer}
 import cats.implicits._
-import doobie.hikari.HikariTransactor
-import doobie.util.ExecutionContexts
+import edu.fiuba.fpfiuba43.FiubaTransactor
 import edu.fiuba.fpfiuba43.services.{HealthCheckImpl, ScoreServiceRest}
 import fs2.Stream
 import org.http4s.client.blaze.BlazeClientBuilder
@@ -15,24 +14,12 @@ import scala.concurrent.ExecutionContext.global
 
 object Fpfiuba43Server {
 
-  def stream[F[_]: ConcurrentEffect](implicit T: Timer[F], cs: ContextShift[F]  ): Stream[F, Nothing] = {
-    // Transactor to connect to our DB.
-    val transactor: Resource[F, HikariTransactor[F]] =
-      for {
-        ce <- ExecutionContexts.fixedThreadPool[F](32)
-        be <- Blocker[F]
-        xa <- HikariTransactor.newHikariTransactor[F](
-          "org.postgresql.Driver",
-          "jdbc:postgresql://localhost:5432/fpalgo",
-          "fiuba",
-          "password",
-          ce,
-          be
-        )
-      } yield xa
+  def stream[F[_]: ConcurrentEffect](implicit T: Timer[F], cs: ContextShift[F]): Stream[F, Nothing] = {
+
+    val transactor = FiubaTransactor.transactor
 
     for {
-      client <- BlazeClientBuilder[F](global).stream
+      _ <- BlazeClientBuilder[F](global).stream
       scoreService = new ScoreServiceRest[F](transactor)
       healthCheck = new HealthCheckImpl[F]("changeme")
       httpApp = (Fpfiuba43Routes.healthCheckRoutes[F](healthCheck)<+>
