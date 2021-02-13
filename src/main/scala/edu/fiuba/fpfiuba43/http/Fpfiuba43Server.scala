@@ -21,7 +21,7 @@ object Fpfiuba43Server {
     for {
       _ <- BlazeClientBuilder[F](global).stream
       scoreService = new ScoreServiceRest[F](transactor)
-      healthCheck = new HealthCheckImpl[F]("changeme")
+      healthCheck = new HealthCheckImpl[F]("Disfuncionales")
       httpApp = (Fpfiuba43Routes.healthCheckRoutes[F](healthCheck)<+>
         Fpfiuba43Routes.scoreRoute[F](scoreService)).orNotFound
       finalHttpApp = Logger.httpApp(true, true)(httpApp)

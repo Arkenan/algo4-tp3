@@ -1,7 +1,7 @@
 package edu.fiuba.fpfiuba43
 
 import cats.Monad
-import cats.effect.{Effect, Resource, Sync}
+import cats.effect.{Resource, Sync}
 import doobie.hikari.HikariTransactor
 import doobie.implicits.{toSqlInterpolator, _}
 import edu.fiuba.fpfiuba43.models.Score

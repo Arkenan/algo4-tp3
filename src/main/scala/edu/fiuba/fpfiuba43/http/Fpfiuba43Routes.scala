@@ -1,8 +1,8 @@
 package edu.fiuba.fpfiuba43.http
 
-import cats.effect.{IO, Sync}
+import cats.effect.Sync
 import cats.implicits._
-import edu.fiuba.fpfiuba43.models.{InputRow, Score}
+import edu.fiuba.fpfiuba43.models.InputRow
 import edu.fiuba.fpfiuba43.services.{HealthCheck, ScoreService}
 import io.circe.syntax._
 import org.http4s.HttpRoutes
@@ -24,7 +24,6 @@ object Fpfiuba43Routes {
   }
 
   def scoreRoute[F[_] : Sync](scoreService: ScoreService[F]): HttpRoutes[F] = {
-
     val dsl = new Http4sDsl[F] {}
     import dsl._
     implicit val decoder = jsonOf[F, InputRow]
