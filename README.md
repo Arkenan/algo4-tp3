@@ -20,3 +20,44 @@ El programa no acepta argumentos y muestra por pantalla la separación entre set
 
 ### Output
 ...
+
+## Descripción de la Solución 
+
+### Estructura del Proyecto
+
+```bash
+src/
+- main/scala/edu.fiuba.fpfiuba43/
+--- http/Fpfiuba43Routes.scala # Funciona como un Controller, armando los métodos de get y post.
+--- http/Fpfiuba43Server.scala # Comunica las rutas con los servicios y crea el Cache y el Scorer.  
+--- models/Models.scala # Modelo en Scala de un DataFrameRow
+--- models/HealthCheckMessage.scala # Obtiene el mensaje que se envía cuando se realiza el request.
+--- services/HealthCheck # Toma el mensaje de HealthCheckMessage y lo devuelve. 
+--- services/ScoreCheck.scala # Coordina el proceso de ejecución para obtener el score.  
+--- Cache.scala # Archivo con utilidades para leer y guardar elementos en la BDD.
+--- FiubaTransactor.scala # Crea el transactor para poder conectar con la BDD. 
+--- Main.scala # Archivo principal de ejecución.
+--- Scorer # Levanta el archivo PMML y obtiene el score del row envíado en el request.
+```
+
+### Pipeline
+
+El trabajo se compone de dos endpoints: 
+
+__health-check__:
+
+* Se recibe el request con un método GET y se devuelve un mensaje. 
+
+__score__:
+
+* Se recibe el request con un método POST y un body que contiene, en formato JSON, los valores de una row utilizada en el TP 2. 
+* Se realiza un decode del JSON y se mapea a un objeto InputRow. 
+* Ese objeto se hashea.
+* Se chequea si ese hash existe en la BDD (Cache). 
+    * En caso afirmativo, se devuelve el score asociado a ese valor de hash.
+    * En caso negativo:
+        * Se levanta el modelo PMML armado en el TP 2.
+        * Se calcula el score con el InputRow obtenido del request.
+        * Se guarda el valor en la BDD.
+        * Se devuelve el score.
+
