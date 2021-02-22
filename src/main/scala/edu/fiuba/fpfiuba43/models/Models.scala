@@ -21,17 +21,17 @@ case class InputRow(id: Int,
                     dollarItau: Double,
                     wDiff: Double) {
 
-  def getField(field: String) = {
+  def getField(field: String): Any = {
     field match {
-      case "open" => open.getOrElse(null)
-      case "high" => high.getOrElse(null)
-      case "low" => low.getOrElse(null)
+      case "open" => open.orNull
+      case "high" => high.orNull
+      case "low" => low.orNull
       case "last" => last
       case "close" => close
       case "diff" => diff
-      case "OVol" => oVol.getOrElse(null)
-      case "ODiff" => oDiff.getOrElse(null)
-      case "OpVol" => opVol.getOrElse(null)
+      case "OVol" => oVol.orNull
+      case "ODiff" => oDiff.orNull
+      case "OpVol" => opVol.orNull
       case "dollarBN" => dollarBN
       case "dollarItau" => dollarItau
       case "wDiff" => wDiff

@@ -20,7 +20,7 @@ class ScoreServiceTest extends AnyFlatSpec with MockFactory {
 
   it should "return the cached score when the row is in cache" in {
     val cache: Cache[IO] = mock[Cache[IO]]
-    val scorer: Scorer = mock[Scorer]
+    val scorer: Scorer[IO] = mock[Scorer[IO]]
     val scoreService: ScoreService[IO] = new ScoreServiceRest(cache, scorer)
     val cachedScore = Score(75.0)
 
@@ -30,13 +30,13 @@ class ScoreServiceTest extends AnyFlatSpec with MockFactory {
 
   it should "calculate the value with the scorer when the row is not cached" in {
     val cache: Cache[IO] = mock[Cache[IO]]
-    val scorer: Scorer = mock[Scorer]
+    val scorer: Scorer[IO] = mock[Scorer[IO]]
     val scoreService: ScoreService[IO] = new ScoreServiceRest(cache, scorer)
     val calculatedScore = Score(15.0)
 
     (cache.getScoreFromCache _).expects(nonCachedRow.hashCode()).returning(IO.pure(None))
-    (cache.saveScoreInCache _).expects(nonCachedRow.hashCode(), calculatedScore).returning(IO.pure())
-    (scorer.score _).expects(nonCachedRow).returning(calculatedScore)
+    (cache.saveScoreInCache _).expects(nonCachedRow.hashCode(), calculatedScore).returning(IO.pure(5))
+    (scorer.score _).expects(nonCachedRow).returning(IO.pure(calculatedScore))
     assert(scoreService.getScore(nonCachedRow).unsafeRunSync() == calculatedScore)
   }
 }
